@@ -14,6 +14,9 @@ cue = "latest"
 [settings]
 lockfile = true
 
+[env]
+_.file = { path = ".env", redact = true }
+
 [tasks.build]
 depends = ["//content:build"]
 run = "pnpm build"
