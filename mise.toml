@@ -1,0 +1,8 @@
+[tools]
+pnpm = "latest"
+typst = "latest"
+typstyle = "latest"
+node = "latest"
+
+[settings]
+lockfile = true
