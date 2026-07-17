@@ -1,8 +1,15 @@
+experimental_monorepo_root = true
+
+[monorepo]
+config_roots = ["content"]
+
 [tools]
 pnpm = "latest"
 typst = "latest"
 typstyle = "latest"
 node = "latest"
+tombi = "latest"
+cue = "latest"
 
 [settings]
 lockfile = true

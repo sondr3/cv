@@ -1,0 +1,11 @@
+[tasks.lint]
+run = "cue vet -c"
+
+[tasks.format]
+run = "cue fmt"
+
+[tasks.build]
+run = """
+cue export . -e norwegian -o norwegian.json 
+cue export . -e english -o english.json 
+"""
