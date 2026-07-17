@@ -31,8 +31,8 @@
 
     === Languages
 
-    Norsk #h(1fr) morsmål \
-    Engelsk #h(1fr) flytende
+    Norwegian #h(1fr) native \
+    English #h(1fr) fluent
 
     === Programming languages
 
