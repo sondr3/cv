@@ -19,35 +19,35 @@
     #for job in configuration.experience [
       === #job.position #h(1fr) #job.start - #job.at("end", default: "") \
       #emph(job.company) #h(1fr) #job.location \
-			#for exp  in job.about [
-				- #exp
-			]
+      #for exp in job.about [
+        - #exp
+      ]
 
-			#tags(job.technologies)
+      #tags(job.technologies)
 
     ]
 
-		== Skills
+    == Skills
 
-		=== Languages
+    === Languages
 
-		Norsk #h(1fr) morsmål \
-		Engelsk #h(1fr) flytende
+    Norsk #h(1fr) morsmål \
+    Engelsk #h(1fr) flytende
 
-		=== Programming languages
+    === Programming languages
 
-		#tags(configuration.skills.languages)
-		
-		=== Technologies
+    #tags(configuration.skills.languages)
 
-		#tags(configuration.skills.technologies)
+    === Technologies
 
-		=== Workflows and processes
+    #tags(configuration.skills.technologies)
 
-		#tags(configuration.skills.workflow)
+    === Workflows and processes
 
-		=== Personal
+    #tags(configuration.skills.workflow)
 
-		#configuration.skills.personal.join(", ", last: " and ")
+    === Personal
+
+    #configuration.skills.personal.join(", ", last: " and ")
   ],
 )

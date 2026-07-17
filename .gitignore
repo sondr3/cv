@@ -1,6 +1,6 @@
 .env
 content/*.json
-public/*.pdf
+**/*.pdf
 
 ### Created by https://www.gitignore.io
 ### Rust ###
