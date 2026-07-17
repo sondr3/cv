@@ -1,0 +1,26 @@
+{
+  "name": "@sondre/cv-aas",
+  "private": true,
+  "description": "My CVaaS",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "rm -rf dist && astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write --log-level warn --cache .",
+    "format:check": "prettier --check --log-level warn --cache ."
+  },
+  "author": "Sondre Aasemoen <sondre@eons.io>",
+  "license": "WTFPL",
+  "devDependencies": {
+    "@astrojs/check": "0.9.9",
+    "astro": "7.0.7",
+    "astro-compressor": "next",
+    "prettier": "3.9.4",
+    "prettier-plugin-astro": "0.14.1",
+    "typescript": "6.0.3"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3"
+  }
+}

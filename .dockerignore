@@ -1,4 +1,0 @@
-target/
-.git
-!target/release/cv-aas
-!target/x86_64-unknown-linux-musl/release/cv-aas

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://cv.eons.io
+
+# Sitemaps
+Sitemap: https://cv.eons.io/sitemap.xml
