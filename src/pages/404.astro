@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const linkClass =
+  "font-mono text-sm text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent dark:text-accent-soft dark:decoration-accent-soft/40 dark:hover:decoration-accent-soft";
+---
+
+<Layout
+  lang="en"
+  title="404 — Sondre Aasemoen"
+  description="Page not found"
+  path="/404/"
+>
+  <main
+    class="flex min-h-svh flex-col items-center justify-center gap-6 px-6 text-center"
+  >
+    <p
+      class="font-mono text-7xl font-semibold text-accent dark:text-accent-soft"
+    >
+      404
+    </p>
+    <p class="text-lg text-zinc-600 dark:text-zinc-300">
+      Page not found · <span lang="no">Siden finnes ikke</span>
+    </p>
+    <nav class="flex gap-6">
+      <a href="/" class={linkClass}>English CV</a>
+      <a href="/no/" hreflang="no" class={linkClass} lang="no">Norsk CV</a>
+    </nav>
+  </main>
+</Layout>
