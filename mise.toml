@@ -13,3 +13,9 @@ cue = "latest"
 
 [settings]
 lockfile = true
+
+[tasks.build]
+run = "pnpm build"
+
+[tasks.format]
+run = "pnpm format"
