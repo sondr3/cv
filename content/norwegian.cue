@@ -5,25 +5,25 @@ import "list"
 norwegian: #Me & _shared & {
 	tagline: "Seniorpotet @ Aritma | Fullstackutvikler"
 	about:   "Jeg er en lidenskapelig og dreven fullstackutvikler med et stort hjerte for fri og åpen kildekode og sterkt typede programmeringsspråk. Senior fullstackutvikler hos Aritma med en mastergrad innen algoritmer fra UiB. Hobbyprosjektfanatiker og har alltid ett for mye prosjekt gående samtidig. På fritiden koser jeg meg med å løpe langt, lange kvelder med brettspill, surdeigsbrød og fermentering og en god øl."
-	education: [{
-		university: "Universitetet i Bergen"
-		degrees: [
-			{
-				title:     "Informatikk - algoritmer"
-				institute: "Institutt for informatikk"
-				degree:    "Master"
-				start:     2020
-				end:       2022
-			}
-			{
-				title:     "Informatikk: Datateknologi"
-				institute: "Institutt for informatikk"
-				degree:    "Bachelor"
-				start:     2017
-				end:       2020
-			}
-		]
-	}]
+	education:
+	[
+		{
+			title:      "Informatikk - algoritmer"
+			university: "Universitetet i Bergen"
+			institute:  "Institutt for informatikk"
+			degree:     "Master"
+			start:      2020
+			end:        2022
+		}
+		{
+			title:      "Informatikk: Datateknologi"
+			university: "Universitetet i Bergen"
+			institute:  "Institutt for informatikk"
+			degree:     "Bachelor"
+			start:      2017
+			end:        2020
+		}
+	]
 	experience: [
 		{
 			position: "Senior Software Engineer / Tech Lead"
@@ -159,9 +159,9 @@ norwegian: #Me & _shared & {
 		workflow: list.Concat([_workflow, ["Prosjektledelse"]])
 		personal: [
 			"Brettspillentusiast"
-			"Semi-entusiastisk jogger"
-			"Sertifisert dykker"
-			"Kokk i hjemmet"
+			"semi-entusiastisk jogger"
+			"sertifisert dykker"
+			"kokk i hjemmet"
 		]
 	}
 }

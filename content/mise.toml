@@ -6,6 +6,8 @@ run = "cue fmt"
 
 [tasks.build]
 run = """
-cue export . -e norwegian -o norwegian.json 
-cue export . -e english -o english.json 
+cue export . -e norwegian -f -o norwegian.json
+cue export . -e english -f -o english.json
+typst compile norwegian.typ ../public/norwegian.pdf
+typst compile english.typ ../public/english.pdf
 """

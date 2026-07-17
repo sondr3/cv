@@ -5,25 +5,25 @@ import "list"
 english: #Me & _shared & {
 	tagline: "Senior Software Engineer @ Aritma | Full stack developer"
 	about:   "I am a passionate and driven full-stack developer with a passion for open-source and strongly typed programming languages. I'm a senior software engineer at Aritma with a masters in algorithms from UiB. I am a hobby project fanatic, there's always one to many project in my head. In my spare time I enjoy spending time with my partner, dog and two cats, long runs, biking, wood working and lathe projects, long evenings playing board games, sourdough baking, fermenting and a good beer."
-	education: [{
-		university: "University of Bergen"
-		degrees: [
-			{
-				title:     "Informatics - Algorithms"
-				institute: "Department of Informatics"
-				degree:    "Master of Science"
-				start:     2020
-				end:       2022
-			}
-			{
-				title:     "Computer Technology"
-				institute: "Department of Informatics"
-				degree:    "Bachelor of Science"
-				start:     2017
-				end:       2020
-			}
-		]
-	}]
+	education:
+	[
+		{
+			title:      "Informatics - Algorithms"
+			university: "University of Bergen"
+			institute:  "Department of Informatics"
+			degree:     "Master of Science"
+			start:      2020
+			end:        2022
+		}
+		{
+			title:      "Computer Technology"
+			university: "University of Bergen"
+			institute:  "Department of Informatics"
+			degree:     "Bachelor of Science"
+			start:      2017
+			end:        2020
+		}
+	]
 	experience: [
 		{
 			position: "Senior Software Engineer / Tech Lead"
@@ -160,9 +160,9 @@ english: #Me & _shared & {
 		workflow: list.Concat([_workflow, ["Project management"]])
 		personal: [
 			"Board game enthusiast"
-			"Semi enthusiastic jogger"
-			"Certified diver"
-			"Home cook"
+			"semi enthusiastic jogger"
+			"certified diver"
+			"home cook"
 		]
 	}
 }
