@@ -11,4 +11,4 @@
 
 # License
 
-WTFPL.
+MIT.
