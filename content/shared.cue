@@ -1,7 +1,7 @@
 package resume
 
-_email: *"hello@example.org" | string @tag(phone)
-_phone: *"81549300" | string          @tag(email)
+_email: *"hello@example.org" | string @tag(email)
+_phone: *"81549300" | string          @tag(phone)
 
 _shared: {
 	name:      "Sondre Aasemoen"

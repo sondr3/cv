@@ -9,8 +9,13 @@ typstyle --inplace norwegian.typ english.typ template.typ
 
 [tasks.build]
 run = """
-cue export . -e norwegian -f -o norwegian.json
-cue export . -e english -f -o english.json
+#!/usr/bin/env bash
+set -eo pipefail
+tags=()
+if [ -n "${MY_EMAIL:-}" ]; then tags+=(-t "email=$MY_EMAIL"); fi
+if [ -n "${MY_PHONE:-}" ]; then tags+=(-t "phone=$MY_PHONE"); fi
+cue export . "${tags[@]}" -e norwegian -f -o norwegian.json
+cue export . "${tags[@]}" -e english -f -o english.json
 typst compile norwegian.typ ../public/norwegian.pdf
 typst compile english.typ ../public/english.pdf
 """

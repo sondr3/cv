@@ -51,6 +51,9 @@ jobs:
 
       - name: Build
         run: mise //...:build
+        env:
+          MY_EMAIL: ${{ secrets.MY_EMAIL }}
+          MY_PHONE: ${{ secrets.MY_PHONE }}
 
       - name: Set up SSH
         if: startsWith(github.ref, 'refs/tags/v')
