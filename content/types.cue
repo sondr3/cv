@@ -1,16 +1,12 @@
 package resume
 
 #Degree: {
-	title:     string
-	institute: string
-	degree:    string
-	start:     int
-	end:       int
-}
-
-#Education: {
+	title:      string
 	university: string
-	degrees: [...#Degree]
+	institute:  string
+	degree:     string
+	start:      int
+	end:        int
 }
 
 #Experience: {
@@ -36,7 +32,7 @@ package resume
 	tagline:   string
 	about:     string
 	socials!: [...#Social]
-	education!: [...#Education]
+	education!: [...#Degree]
 	experience!: [...#Experience]
 	skills!: {
 		languages!: [...string]
