@@ -65,7 +65,7 @@ jobs:
 
       - name: Sync to server
         if: startsWith(github.ref, 'refs/tags/v')
-        run: rsync -rlptcv --delete --chmod=D2755,F644 dist/ $USER@$HOST:eons.io/
+        run: rsync -rlptcv --delete --chmod=D2755,F644 dist/ $USER@$HOST:cv.eons.io/
         env:
           USER: ${{ secrets.REMOTE_USER }}
           HOST: ${{ secrets.REMOTE_HOST }}
