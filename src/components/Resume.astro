@@ -1,0 +1,58 @@
+---
+import type { CollectionEntry } from "astro:content";
+import type { Locale } from "../i18n";
+import Header from "./Header.astro";
+import Section from "./Section.astro";
+import ExperienceItem from "./ExperienceItem.astro";
+import EducationItem from "./EducationItem.astro";
+import SkillGroup from "./SkillGroup.astro";
+
+interface Props {
+  locale: Locale;
+  data: CollectionEntry<"resume">["data"];
+}
+
+const { locale, data } = Astro.props;
+const { t } = locale;
+
+const skillGroups = [
+  { label: t.languages, items: data.skills.languages },
+  { label: t.technologies, items: data.skills.technologies },
+  { label: t.workflow, items: data.skills.workflow },
+  { label: t.personal, items: data.skills.personal },
+];
+---
+
+<main class="mx-auto max-w-2xl space-y-14 px-6 py-14 md:py-20">
+  <Header locale={locale} data={data} />
+
+  <Section title={t.about}>
+    <p class="text-base/relaxed">{data.about}</p>
+  </Section>
+
+  <Section title={t.education}>
+    <div class="space-y-8">
+      {data.education.map((degree) => <EducationItem degree={degree} />)}
+    </div>
+  </Section>
+
+  <Section title={t.experience}>
+    <div class="space-y-10">
+      {
+        data.experience.map((job) => (
+          <ExperienceItem job={job} present={t.present} />
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section title={t.skills}>
+    <div class="space-y-5">
+      {
+        skillGroups.map((group) => (
+          <SkillGroup label={group.label} items={group.items} />
+        ))
+      }
+    </div>
+  </Section>
+</main>

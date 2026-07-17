@@ -1,0 +1,21 @@
+---
+import Tag from "./Tag.astro";
+
+interface Props {
+  label: string;
+  items: string[];
+}
+
+const { label, items } = Astro.props;
+---
+
+<div class="sm:grid sm:grid-cols-[8rem_1fr] sm:gap-4">
+  <h3
+    class="mb-1.5 font-mono text-sm text-zinc-500 sm:mb-0 sm:pt-0.5 dark:text-zinc-300"
+  >
+    {label}
+  </h3>
+  <div class="flex flex-wrap gap-1.5">
+    {items.map((item) => <Tag label={item} />)}
+  </div>
+</div>

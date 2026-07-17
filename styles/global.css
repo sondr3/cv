@@ -1,1 +1,57 @@
 @import "tailwindcss";
+
+/* dark: follows the data-theme attribute set by the theme switcher,
+   falling back to the OS preference when JS hasn't run (no-JS visitors) */
+@custom-variant dark {
+  &:where([data-theme="dark"], [data-theme="dark"] *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(:root:not([data-theme]), :root:not([data-theme]) *) {
+      @slot;
+    }
+  }
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+@font-face {
+  font-family: "Piazzolla";
+  src: url("/fonts/Piazzolla.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Piazzolla";
+  src: url("/fonts/PiazzollaItalic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("/fonts/Inconsolata.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-size: 106.25%; /* 17px base — Piazzolla runs small */
+}
+
+@theme {
+  --font-sans: "Piazzolla", ui-serif, Georgia, serif;
+  --font-mono: "Inconsolata", ui-monospace, "SF Mono", monospace;
+  --color-accent: #3730a3;
+  --color-accent-soft: #a5b4fc;
+}

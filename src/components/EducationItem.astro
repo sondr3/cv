@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  degree: CollectionEntry<"resume">["data"]["education"][number];
+}
+
+const { degree } = Astro.props;
+---
+
+<article>
+  <div
+    class="flex flex-col gap-x-4 sm:flex-row sm:items-baseline sm:justify-between"
+  >
+    <h3 class="font-medium">{degree.degree}</h3>
+    <p class="shrink-0 text-zinc-500 dark:text-zinc-300">{degree.university}</p>
+  </div>
+  <div
+    class="flex flex-col gap-x-4 sm:flex-row sm:items-baseline sm:justify-between"
+  >
+    <p class="text-zinc-600 dark:text-zinc-300">{degree.title}</p>
+    <p class="shrink-0 font-mono text-sm text-zinc-500 dark:text-zinc-300">
+      {degree.start}–{degree.end}
+    </p>
+  </div>
+</article>

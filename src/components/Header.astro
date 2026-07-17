@@ -1,0 +1,72 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { locales, type Locale } from "../i18n";
+import Icon from "./Icon.astro";
+import ThemeSwitch from "./ThemeSwitch.astro";
+
+interface Props {
+  locale: Locale;
+  data: CollectionEntry<"resume">["data"];
+}
+
+const { locale, data } = Astro.props;
+const other = locales[locale.other];
+
+const hrefFor = (social: Props["data"]["socials"][number]) => {
+  if (social.type === "Email") return `mailto:${social.link}`;
+  if (social.type === "Phone") return `tel:${social.link}`;
+  return social.link;
+};
+
+const labelFor = (social: Props["data"]["socials"][number]) =>
+  social.type === "Email" || social.type === "Phone"
+    ? social.link
+    : social.title;
+---
+
+<header>
+  <div class="flex items-start justify-between gap-4">
+    <h1 class="text-4xl font-semibold tracking-tight">{data.name}</h1>
+    <div class="flex shrink-0 items-center gap-3 pt-2">
+      <a
+        href={other.path}
+        hreflang={other.lang}
+        rel="alternate"
+        class="font-mono text-sm text-zinc-500 underline decoration-zinc-400/60 underline-offset-2 hover:text-accent hover:decoration-accent dark:text-zinc-300 dark:hover:text-accent-soft dark:hover:decoration-accent-soft"
+      >
+        {locale.t.switchLabel}
+      </a>
+      <ThemeSwitch t={locale.t} />
+    </div>
+  </div>
+  <p class="mt-2 text-lg text-zinc-600 dark:text-zinc-300">{data.tagline}</p>
+
+  <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+    {
+      data.socials.map((social) => (
+        <li>
+          <a
+            href={hrefFor(social)}
+            class="inline-flex items-center gap-1.5 text-zinc-600 hover:text-accent dark:text-zinc-300 dark:hover:text-accent-soft"
+          >
+            <Icon
+              name={
+                social.type.toLowerCase() as Lowercase<(typeof social)["type"]>
+              }
+            />
+            {labelFor(social)}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="mt-8">
+    <a
+      href={locale.pdf}
+      class="inline-block rounded border border-accent/40 px-4 py-2 font-mono text-sm text-accent hover:bg-accent/5 dark:border-accent-soft/40 dark:text-accent-soft dark:hover:bg-accent-soft/10"
+    >
+      {locale.t.downloadPdf} ↓
+    </a>
+  </div>
+</header>

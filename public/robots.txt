@@ -6,4 +6,4 @@ Allow: /
 Host: https://cv.eons.io
 
 # Sitemaps
-Sitemap: https://cv.eons.io/sitemap.xml
+Sitemap: https://cv.eons.io/sitemap-index.xml
