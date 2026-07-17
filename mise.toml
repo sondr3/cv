@@ -15,6 +15,7 @@ cue = "latest"
 lockfile = true
 
 [tasks.build]
+depends = ["//content:build"]
 run = "pnpm build"
 
 [tasks.format]
