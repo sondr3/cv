@@ -26,8 +26,14 @@
 
   services
     .map(service => {
+      let content = if service.type == "Phone" or service.type == "Email" {
+        service.link
+      } else {
+        service.title
+      }
+
       icon(service.type)
-      link(service.link)[#service.link]
+      link(service.link)[#content]
     })
     .join(h(10pt))
   [
