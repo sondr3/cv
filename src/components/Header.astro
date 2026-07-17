@@ -43,21 +43,25 @@ const labelFor = (social: Props["data"]["socials"][number]) =>
 
   <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm">
     {
-      data.socials.map((social) => (
-        <li>
-          <a
-            href={hrefFor(social)}
-            class="inline-flex items-center gap-1.5 text-zinc-600 hover:text-accent dark:text-zinc-300 dark:hover:text-accent-soft"
-          >
-            <Icon
-              name={
-                social.type.toLowerCase() as Lowercase<(typeof social)["type"]>
-              }
-            />
-            {labelFor(social)}
-          </a>
-        </li>
-      ))
+      data.socials
+        .filter((social) => social.type !== "Phone")
+        .map((social) => (
+          <li>
+            <a
+              href={hrefFor(social)}
+              class="inline-flex items-center gap-1.5 text-zinc-600 hover:text-accent dark:text-zinc-300 dark:hover:text-accent-soft"
+            >
+              <Icon
+                name={
+                  social.type.toLowerCase() as Lowercase<
+                    (typeof social)["type"]
+                  >
+                }
+              />
+              {labelFor(social)}
+            </a>
+          </li>
+        ))
     }
   </ul>
 
