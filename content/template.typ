@@ -52,7 +52,7 @@
     title: name + "'s CV",
     author: name,
   )
-  set text(9.8pt, font: "PT Sans", lang: "no")
+  set text(font: "Libertinus Serif", lang: "no")
   set page(
     margin: (x: 2cm, y: 1.2cm),
   )
