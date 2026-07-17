@@ -5,7 +5,7 @@
   box(
     baseline: shift,
     height: 10pt,
-    image("icons/" + name + ".svg")
+    image("icons/" + name + ".svg"),
   )
   h(3pt)
 }
@@ -14,21 +14,25 @@
   set text(8pt)
   let icon = icon.with(shift: 2.5pt)
 
-  services.map(service => {
+  services
+    .map(service => {
       icon(service.name)
 
       if service.link == "" and "display" not in service.keys() { return }
 
-      let content = if "display" in service.keys() { service.display } else { service.link }
+      let content = if "display" in service.keys() { service.display } else {
+        service.link
+      }
 
       if service.link != "" {
         link(service.link)[#content]
       } else {
         content
       }
-    }).join(h(10pt))
+    })
+    .join(h(10pt))
   [
-    
+
   ]
 }
 
@@ -45,32 +49,32 @@
 
   h(1fr)
 
-  while (not done){
+  while (not done) {
     let colour = rgb("#c0c0c0")
     let strokeColor = rgb("#c0c0c0")
     let radiusValue = (left: 0em, right: 0em)
 
-    if (i <= rating){
+    if (i <= rating) {
       colour = primary_colour
       strokeColor = primary_colour
     }
 
     // Add rounded corners for the first and last boxes
     if (i == 1) {
-      radiusValue = (left: 2em, right: 0em)  
+      radiusValue = (left: 2em, right: 0em)
     } else if (i == max_rating) {
-      radiusValue = (left: 0em, right: 2em) 
+      radiusValue = (left: 0em, right: 2em)
     }
 
     box(rect(
-      height: 0.3em, 
-      width: 1.5em, 
+      height: 0.3em,
+      width: 1.5em,
       stroke: strokeColor,
       fill: colour,
-      radius: radiusValue
+      radius: radiusValue,
     ))
 
-    if (max_rating == i){
+    if (max_rating == i) {
       done = true
     }
 
@@ -82,9 +86,9 @@
 
 
 #let styled-link(dest, content) = emph(text(
-    fill: link_colour,
-    link(dest, content)
-  ))
+  fill: link_colour,
+  link(dest, content),
+))
 
 #let vantage(
   name: "",
@@ -92,7 +96,7 @@
   links: (),
   tagline: [],
   leftSide,
-  rightSide
+  rightSide,
 ) = {
   set document(
     title: name + "'s CV",
@@ -103,32 +107,32 @@
     margin: (x: 1.2cm, y: 1.2cm),
   )
 
-  show heading.where(level: 1) : it => text(16pt,[#{it.body} #v(1pt)])
+  show heading.where(level: 1): it => text(16pt, [#{ it.body } #v(1pt)])
 
   show heading.where(
     level: 2,
   ): it => text(
-      fill: primary_colour,
+    fill: primary_colour,
     [
-      #{it.body}
+      #{ it.body }
       #v(-7pt)
       #line(length: 100%, stroke: 0.5pt + primary_colour)
-    ]
+    ],
   )
 
   show heading.where(
-    level: 3
+    level: 3,
   ): it => text(it.body)
-  
+
   show heading.where(
-    level: 4
+    level: 4,
   ): it => text(
     fill: primary_colour,
-    it.body
+    it.body,
   )
 
   [= #name]
-  text(12pt, weight: "medium",[#position])
+  text(12pt, weight: "medium", [#position])
 
   v(0pt)
   findMe(links)
@@ -138,7 +142,6 @@
   grid(
     columns: (7fr, 4fr),
     column-gutter: 2em,
-    leftSide,
-    rightSide,
+    leftSide, rightSide,
   )
 }
