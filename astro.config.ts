@@ -18,7 +18,10 @@ export default defineConfig({
   },
 
   compressHTML: true,
-  integrations: [sitemap(), compressor()],
+  integrations: [
+    sitemap({ i18n: { defaultLocale: "en", locales: { en: "en", no: "no" } } }),
+    compressor(),
+  ],
 
   vite: {
     plugins: [tailwindcss()],

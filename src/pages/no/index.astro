@@ -1,10 +1,10 @@
 ---
 import { getEntry } from "astro:content";
-import Layout from "../layouts/Layout.astro";
-import Resume from "../components/Resume.astro";
-import { locales } from "../i18n";
+import Layout from "../../layouts/Layout.astro";
+import Resume from "../../components/Resume.astro";
+import { locales } from "../../i18n";
 
-const locale = locales.en;
+const locale = locales.no;
 const entry = await getEntry("resume", locale.entryId);
 if (!entry)
   throw new Error(
