@@ -26,7 +26,7 @@ norwegian: #Me & _shared & {
 	]
 	experience: [
 		{
-			position: "Senior Software Engineer / Tech Lead"
+			position: "Senior Software Engineer"
 			company:  "Aritma"
 			location: "Bergen"
 			start:    "Aug 2024"
