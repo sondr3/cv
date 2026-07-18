@@ -32,8 +32,16 @@
         service.title
       }
 
+      let dest = if service.type == "Email" {
+        "mailto:" + service.link
+      } else if service.type == "Phone" {
+        "tel:" + service.link.replace(" ", "")
+      } else {
+        service.link
+      }
+
       icon(service.type)
-      link(service.link)[#content]
+      link(dest)[#content]
     })
     .join(h(10pt))
   [
